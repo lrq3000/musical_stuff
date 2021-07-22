@@ -37,14 +37,13 @@
 	   try to increase Auto DJ fade duration in Mixxx (30 seconds is usually fine), and
 	   try to decrease midiAutoDJ.sleepDuration in Advanced Options below.
 	 * First, let Mixxx analyse your library for BPM and key
-     * Make sure to enable manually Quantize (magnet button) for both decks, and keylock if you want it, before starting AutoDJ. The script assumes Quantize is always on.
      * Helpful resources to update compatibility in the future: https://github.com/mixxxdj/mixxx/wiki/Midi-Scripting and https://github.com/mixxxdj/mixxx/wiki/Midi-Controller-Mapping-File-Format and get inspiration from other user custom mappings on the forum.
 */
 
 var midiAutoDJ = {};
 
 // Basic Options
-midiAutoDJ.maxBpmAdjustment = 12;   // Maximum adjustment of BPM allowed for beats to sync
+midiAutoDJ.maxBpmAdjustment = 100;   // Maximum adjustment of BPM allowed for beats to sync
                                     // Note the difference of both tracks BPMs may be twice as much,
                                     // by matching two beats to one beat, where appropriate. This
                                     // allows for greater genre permeability and inclusion of half-
@@ -67,7 +66,7 @@ midiAutoDJ.adaptiveBpmSearch = 1;   // Try to find a song which matches current 
                                     // maxBpmAdjustment is reached.
                                     // Unit: Binary
 
-midiAutoDJ.shuffleAfterSkip = 1;    // Shuffle Auto-DJ queue after skipping a track.
+midiAutoDJ.shuffleAfterSkip = 0;    // Shuffle Auto-DJ queue after skipping a track.
                                     // When using a fixed set of tracks without manual intervention,
                                     // some tracks may be unreachable, due to having an unfortunate
                                     // place in the queue ordering. This solves the issue.
@@ -78,17 +77,17 @@ midiAutoDJ.skipsTillSurrender = 24; // Number of times to skip a track before re
                                     // Reduces load on Mixxx, allowing for smoother operation.
                                     // Unit: Integer; Range: 1 to MaxInt; Default: 24
 
-midiAutoDJ.careAboutKey = 1;        // Toggles if key is to be taken into account (1),
+midiAutoDJ.careAboutKey = 0;        // Toggles if key is to be taken into account (1),
                                     // or if key should be ignored (0),
                                     // when selecting the next track.
                                     // Unit: Binary
 
-midiAutoDJ.adjustKey = 1;           // Toggles if key should be adjusted (1),
+midiAutoDJ.adjustKey = 0;           // Toggles if key should be adjusted (1),
                                     // or if key should stay untouched (0),
                                     // when fading a deck out.
                                     // Unit: Binary
 
-midiAutoDJ.fadeQuickEffect = 1;     // Toggles if Quick Effect filter should be faded (1).
+midiAutoDJ.fadeQuickEffect = 0;     // Toggles if Quick Effect filter should be faded (1).
                                     // or if it should stay untouched (0).
                                     // Unit: Binary
 
@@ -97,14 +96,14 @@ midiAutoDJ.reverseQuickEffect = 0;  // Toggles direction of Quick Effect fade.
                                     // 1: Fade out to right, fade in from  left.
                                     // Unit: Binary
 
-midiAutoDJ.fadeRange = 0.5;         // Decide how far the Quick Effects knob should turn
+midiAutoDJ.fadeRange = 0.25;         // Decide how far the Quick Effects knob should turn
                                     // 0.0: No fade at all
                                     // 0.5: Fade out to 25%, fade in from 75%
                                     // 1.0: Fade out to  0%, fade in from 100%
                                     // Unit: Float; Range: 0.0 to 1.0; Default: 0.5
 
 // Advanced Options
-midiAutoDJ.refineDuration = 1000; // Duration of sleeping between two track skips.
+midiAutoDJ.refineDuration = 2000; // Duration of sleeping between two track skips.
                                   // If Mixxx appears to hang or be overwhelmed when searching
                                   // for the next track, increase this value.
                                   // Note: Must NOT be smaller than midiAutoDJ.sleepDuration
