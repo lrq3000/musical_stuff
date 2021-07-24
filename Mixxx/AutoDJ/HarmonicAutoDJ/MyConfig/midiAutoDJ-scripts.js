@@ -87,7 +87,7 @@ midiAutoDJ.adjustKey = 0;           // Toggles if key should be adjusted (1),
                                     // when fading a deck out.
                                     // Unit: Binary
 
-midiAutoDJ.fadeQuickEffect = 0;     // Toggles if Quick Effect filter should be faded (1).
+midiAutoDJ.fadeQuickEffect = 1;     // Toggles if Quick Effect filter should be faded (1).
                                     // or if it should stay untouched (0).
                                     // Unit: Binary
 
