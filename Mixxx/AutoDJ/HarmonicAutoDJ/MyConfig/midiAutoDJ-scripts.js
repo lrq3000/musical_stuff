@@ -103,7 +103,7 @@ midiAutoDJ.fadeRange = 0.25;         // Decide how far the Quick Effects knob sh
                                     // Unit: Float; Range: 0.0 to 1.0; Default: 0.5
 
 // Advanced Options
-midiAutoDJ.refineDuration = 2000; // Duration of sleeping between two track skips.
+midiAutoDJ.refineDuration = 1000; // Duration of sleeping between two track skips.
                                   // If Mixxx appears to hang or be overwhelmed when searching
                                   // for the next track, increase this value.
                                   // Note: Must NOT be smaller than midiAutoDJ.sleepDuration
