@@ -43,7 +43,7 @@
 var midiAutoDJ = {};
 
 // Basic Options
-midiAutoDJ.maxBpmAdjustment = 100;   // Maximum adjustment of BPM allowed for beats to sync
+midiAutoDJ.maxBpmAdjustment = 200;   // Maximum adjustment of BPM allowed for beats to sync
                                     // Note the difference of both tracks BPMs may be twice as much,
                                     // by matching two beats to one beat, where appropriate. This
                                     // allows for greater genre permeability and inclusion of half-
@@ -72,7 +72,7 @@ midiAutoDJ.shuffleAfterSkip = 0;    // Shuffle Auto-DJ queue after skipping a tr
                                     // place in the queue ordering. This solves the issue.
                                     // Unit: Binary
 
-midiAutoDJ.skipsTillSurrender = 24; // Number of times to skip a track before resorting to
+midiAutoDJ.skipsTillSurrender = 0; // Number of times to skip a track before resorting to
                                     // shuffling and increasing allowed BPM difference.
                                     // Reduces load on Mixxx, allowing for smoother operation.
                                     // Unit: Integer; Range: 1 to MaxInt; Default: 24
