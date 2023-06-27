@@ -13,11 +13,11 @@
 
 	Usage:
 	 1. Configure script options to your liking (see below)
-     2. Install a virtual midi port/controller, eg, loopMIDI on Windows.
+         2. Install a virtual midi port/controller, eg, loopMIDI on Windows; "sudo modprobe snd_virmidi midi_devs=1" on Linux.
 	 3. Navigate to Options, Preferences, Controllers
         * in the main panel, click on Open User Mapping Folder button. Unzip the .js and .xml files inside this folder.
         * select on the left side panel the virtual midi port you just created.
-     4. In the Load Mapping dropdown selector, select midiAutoDJ.
+         4. In the Load Mapping dropdown selector, select midiAutoDJ.
 	 5. Check that the checkbox Enabled is checked.
 	 6. [Apply], [OK]
 	 7. Restart Mixxx
